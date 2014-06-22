@@ -1,0 +1,61 @@
+<h2>Information for <%= @pet.name %></h2>
+<p><%= link_to 'Back', root_url %></p>
+
+<table class="table">
+  <tr>
+    <td>Name</td>
+    <td><%= @pet.name %></td>
+  </tr>
+  <tr>
+    <td>Petfinder ID</td>
+    <td><%= @pet.petfinder_id %></td>
+  </tr>
+  <tr>
+    <td>Shelter ID</td>
+    <td><%= @pet.shelter_id %></td>
+  </tr>
+  <tr>
+    <td>Type</td>
+    <td><%= @pet.pet_type %></td>
+  </tr>
+  <tr>
+    <td>Breeds</td>
+    <td><%= @pet.breeds %></td>
+  </tr>
+  <tr>
+    <td>Mix?</td>
+    <td><%= @pet.mix %></td>
+  </tr>
+  <tr>
+    <td>Age</td>
+    <td><%= @pet.age %></td>
+  </tr>
+  <tr>
+    <td>Sex</td>
+    <td><%= @pet.sex %></td>
+  </tr>
+  <tr>
+    <td>Has Shots?</td>
+    <td><%= @pet.has_shots %></td>
+  </tr>
+  <tr>
+    <td>Housetrained</td>
+    <td><%= @pet.housetrained %></td>
+  </tr>
+  <tr>
+    <td>Description</td>
+    <td><%= @pet.description %></td>
+  </tr>
+  <tr>
+    <td>Status</td>
+    <td><%= @pet.status %></td>
+  </tr>
+  <tr>
+    <td>Last Updated At</td>
+    <td><%= @pet.last_update %></td>
+  </tr>
+  <tr>
+    <td>Created At</td>
+    <td><%= @pet.created_at %></td>
+  </tr>
+</table>

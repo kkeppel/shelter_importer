@@ -1,0 +1,51 @@
+<% model_class = Pet %>
+
+<div class="page-header">
+  <h1>All Pets in <%= @organization.name %></h1>
+</div>
+<%= link_to 'Back', root_url %>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Shelter ID</th>
+      <th>Shelter Pet ID</th>
+      <th><%= model_class.human_attribute_name(:pet_type) %></th>
+      <th><%= model_class.human_attribute_name(:name) %></th>
+      <th><%= model_class.human_attribute_name(:breeds) %></th>
+      <th><%= model_class.human_attribute_name(:mix) %></th>
+      <th><%= model_class.human_attribute_name(:age) %></th>
+      <th><%= model_class.human_attribute_name(:sex) %></th>
+      <th><%= model_class.human_attribute_name(:size) %></th>
+      <th><%= model_class.human_attribute_name(:has_shots) %></th>
+      <th><%= model_class.human_attribute_name(:altered) %></th>
+      <th><%= model_class.human_attribute_name(:housetrained) %></th>
+      <th><%= model_class.human_attribute_name(:description) %></th>
+      <th><%= model_class.human_attribute_name(:last_update) %></th>
+      <th><%= model_class.human_attribute_name(:status) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      
+  </thead>
+  <tbody>
+    <% @pets.each do |pet| %>
+      <tr>
+        <td><%= link_to pet.shelter_id, pet %></td>
+        <td><%= pet.shelter_pet_id %></td>
+        <td><%= pet.pet_type %></td>
+        <td><%= pet.name %></td>
+        <td><%= pet.breeds %></td>
+        <td><%= pet.mix %></td>
+        <td><%= pet.age %></td>
+        <td><%= pet.sex %></td>
+        <td><%= pet.size %></td>
+        <td><%= pet.has_shots %></td>
+        <td><%= pet.altered %></td>
+        <td><%= pet.housetrained %></td>
+        <td><%= pet.description.truncate(30, separator: ' ') %></td>
+        <td><%= pet.last_update %></td>
+        <td><%= pet.status %></td>
+        <td><%= pet.created_at %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

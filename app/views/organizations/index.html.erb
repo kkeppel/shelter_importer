@@ -1,0 +1,10 @@
+<%- model_class = Organization -%>
+
+<h2>Import Pets</h2>
+<%= form_tag organizations_import_path, method: :get do %>
+  <p>Organization ID: <%= text_field_tag :organization_id, params[:organization_id] %></p>
+  <p>Pet Count: <%= number_field_tag :count, params[:count] %></p>
+  <p><%= submit_tag "Lookup", name: nil %></p>
+<% end %>
+
+<p><%= link_to "See All Pets", pets_path %></p>
