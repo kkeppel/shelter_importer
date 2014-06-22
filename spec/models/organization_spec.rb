@@ -8,16 +8,18 @@ RSpec.describe Organization, :type => :model do
     end
 
     it "updates only unique shelters" do
-      expect(Organization.all.count).to eql(1)
+      org_count = Organization.all.count
+      expect(Organization.all.count).to eql(org_count)
 
       Organization.import_shelter("NY488", 10019)
-      expect(Organization.all.count).to eql(1)
+
+      expect(Organization.all.count).to eql(org_count)
+    end
+
+    after(:each) do
+      Organization.delete_all
     end
 
   end
 
-  after(:each) do
-    Organization.delete_all
-  end
-  
 end

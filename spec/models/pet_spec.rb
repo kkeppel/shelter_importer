@@ -11,13 +11,13 @@ RSpec.describe Pet, :type => :model do
 
     it "only imports dogs and cats" do
       Pet.import("NY835", 10)
-      expect([["cat"], ["dog"]]).to include(Pet.all.map{|p| p.pet_type}.uniq)
+      expect(["cat", "dog"]).to include(Pet.all.map{|p| p.pet_type}.uniq.first)
     end
 
-  end
+    after(:each) do
+      Pet.delete_all
+    end
 
-  after(:each) do
-    Pet.delete_all
   end
 
 end
